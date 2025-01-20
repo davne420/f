@@ -92,7 +92,8 @@ public class POCDMT000040Material {
     @XmlElement(name = "templateId")
     protected List<II> templateIds;
     protected org.hl7.v3.CE code;
-    protected EN name;
+    @XmlElement(name = "name", required = true)
+    protected String name;
     @XmlElement(namespace = "urn:ihe:pharm")
     protected ED desc;
     @XmlElement(namespace = "urn:ihe:pharm")
@@ -110,7 +111,7 @@ public class POCDMT000040Material {
     protected List<COCTMT230100UVDistributedProduct> asDistributedProducts;
     @XmlElement(name = "asMedicineManufacturer", namespace = "urn:ihe:pharm", nillable = true)
     protected List<COCTMT230100UVMedicineManufacturer> asMedicineManufacturers;
-    @XmlElement(namespace = "urn:ihe:pharm", nillable = true)
+    @XmlElement(namespace = "urn:ihe:pharm")
     protected COCTMT230100UVContent asContent;
     @XmlElement(name = "asSpecializedKind", namespace = "urn:ihe:pharm", nillable = true)
     protected List<COCTMT230100UVSpecializedKind> asSpecializedKinds;
@@ -219,23 +220,11 @@ public class POCDMT000040Material {
         this.code = value;
     }
 
-    /**
-     * Gets the value of the name property.
-     *
-     * @return possible object is
-     * {@link EN }
-     */
-    public EN getName() {
+    public String getName() {
         return name;
     }
 
-    /**
-     * Sets the value of the name property.
-     *
-     * @param value allowed object is
-     *              {@link EN }
-     */
-    public void setName(EN value) {
+    public void setName(String value) {
         this.name = value;
     }
 
